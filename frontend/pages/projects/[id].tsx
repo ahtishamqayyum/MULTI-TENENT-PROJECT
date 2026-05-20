@@ -1,3 +1,6 @@
+/**
+ * Single project view/edit/delete by route id.
+ */
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { projectsAPI, Project } from '../../lib/api'

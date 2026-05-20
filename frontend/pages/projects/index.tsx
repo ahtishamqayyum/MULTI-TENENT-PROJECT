@@ -1,3 +1,7 @@
+/**
+ * Projects list: tenant-scoped cards, create form, delete.
+ * Data from API; 401 clears storage and redirects to login.
+ */
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { projectsAPI, Project } from '../../lib/api'

@@ -1,3 +1,4 @@
+/** Home: sends authenticated users to /projects, others to /login. */
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 

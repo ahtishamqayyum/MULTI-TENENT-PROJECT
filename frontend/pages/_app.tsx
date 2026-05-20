@@ -1,3 +1,6 @@
+/**
+ * App shell: checks localStorage token and redirects unauthenticated users to /login.
+ */
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'

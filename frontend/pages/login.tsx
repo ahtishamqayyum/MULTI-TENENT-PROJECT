@@ -1,3 +1,7 @@
+/**
+ * Login / register / forgot-password UI.
+ * Stores token + user in localStorage on successful login.
+ */
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { authAPI, Tenant } from '../lib/api'

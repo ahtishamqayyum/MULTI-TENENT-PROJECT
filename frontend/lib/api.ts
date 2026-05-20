@@ -1,3 +1,7 @@
+/**
+ * API client: axios instance + auth/projects helpers.
+ * Attaches JWT from localStorage on each request (browser only).
+ */
 import axios from 'axios';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
@@ -19,6 +23,8 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
+// --- Types ---
 
 export interface User {
   id: number;
@@ -50,6 +56,8 @@ export interface Tenant {
   name: string;
 }
 
+// --- Auth endpoints ---
+
 export const authAPI = {
   login: async (email: string, password: string): Promise<LoginResponse> => {
     const response = await api.post('/auth/login', { email, password });
@@ -72,6 +80,8 @@ export const authAPI = {
     return response.data;
   },
 };
+
+// --- Projects (requires JWT via interceptor) ---
 
 export const projectsAPI = {
   getAll: async (): Promise<Project[]> => {
