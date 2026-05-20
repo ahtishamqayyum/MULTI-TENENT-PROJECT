@@ -10,6 +10,7 @@ A full-stack multi-tenant application with JWT authentication and CRUD operation
 - **Tenant Isolation**: Users can only access projects from their own tenant
 - **SQLite Database**: Local SQLite with PostgreSQL-style query compatibility layer
 - **Next.js Frontend**: Modern React-based UI with TypeScript
+- **Documented Codebase**: Inline comments across backend and frontend source
 
 ## Project Structure
 
