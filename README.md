@@ -8,7 +8,7 @@ A full-stack multi-tenant application with JWT authentication and CRUD operation
 - **JWT Authentication**: Secure token-based authentication
 - **Project Management**: Full CRUD operations for projects
 - **Tenant Isolation**: Users can only access projects from their own tenant
-- **PostgreSQL Database**: Robust relational database with proper schema
+- **SQLite Database**: Local SQLite with PostgreSQL-style query compatibility layer
 - **Next.js Frontend**: Modern React-based UI with TypeScript
 
 ## Project Structure
