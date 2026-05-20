@@ -1,3 +1,8 @@
+/**
+ * Multi-Tenant Project Management API
+ * Express server: auth + projects routes, CORS, health check.
+ * DB must initialize before listen (see config/database.js).
+ */
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();

@@ -1,3 +1,8 @@
+/**
+ * Project CRUD — scoped by tenant_id.
+ * Admin: all projects in tenant. User: only own projects.
+ * All routes use authenticateToken + enforceTenantIsolation.
+ */
 const express = require('express');
 const { pool } = require('../config/database');
 const { authenticateToken } = require('../middleware/auth');

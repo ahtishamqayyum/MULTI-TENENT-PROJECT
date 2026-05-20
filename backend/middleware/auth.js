@@ -1,10 +1,15 @@
+/**
+ * JWT authentication middleware.
+ * Validates Bearer token, loads user + tenant_id from DB, sets req.user.
+ */
 const jwt = require('jsonwebtoken');
 const { pool } = require('../config/database');
 
 const authenticateToken = async (req, res, next) => {
   try {
     const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+    // Authorization: Bearer <jwt>
+    const token = authHeader && authHeader.split(' ')[1];
 
     if (!token) {
       return res.status(401).json({ error: 'Access token required' });

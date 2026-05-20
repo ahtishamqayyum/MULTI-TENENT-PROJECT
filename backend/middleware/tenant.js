@@ -1,4 +1,7 @@
-// Middleware to ensure user can only access their own tenant's data
+/**
+ * Tenant isolation middleware (runs after authenticateToken).
+ * Copies req.user.tenant_id to req.tenantId so routes cannot spoof tenant from body.
+ */
 const enforceTenantIsolation = (req, res, next) => {
   // This middleware assumes authenticateToken has already run
   // and req.user.tenant_id is available

@@ -1,3 +1,7 @@
+/**
+ * SQLite database layer with PostgreSQL-style pool.query() compatibility.
+ * Converts $1 placeholders and RETURNING clauses for existing route SQL.
+ */
 const Database = require('better-sqlite3');
 const path = require('path');
 require('dotenv').config();
@@ -128,7 +132,7 @@ const initializeDatabase = async () => {
   }
 };
 
-// Helper function to convert PostgreSQL-style queries to SQLite
+// Maps route SQL ($1, RETURNING, CURRENT_TIMESTAMP) to SQLite (? , lastInsertRowid)
 const convertQuery = (sql, params = []) => {
   // Convert $1, $2, etc. to ? placeholders
   let convertedSql = sql;
@@ -216,7 +220,7 @@ const query = (sql, params = []) => {
   })());
 };
 
-// Create a pool-like object with query method for compatibility
+// pool.query() — same interface routes expect from pg
 const pool = {
   query: query
 };
